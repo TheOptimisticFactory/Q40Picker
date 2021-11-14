@@ -105,11 +105,11 @@ namespace Q40Picker
             {
                 RectangleF itmPos = g.Gem.GetClientRect();
                 KeyboardHelper.KeyDown(System.Windows.Forms.Keys.LControlKey);
-                Thread.Sleep((int)GameController.Game.IngameState.CurLatency);
+                Thread.Sleep(GameController?.IngameState?.ServerData?.Latency ?? 50);
                 Mouse.SetCursorPosAndLeftClick(RandomizedCenterPoint(itmPos), GameController.Window.GetWindowRectangle().TopLeft);
-                Thread.Sleep((int)GameController.Game.IngameState.CurLatency);
+                Thread.Sleep(GameController?.IngameState?.ServerData?.Latency ?? 50);
                 KeyboardHelper.KeyUp(System.Windows.Forms.Keys.LControlKey);
-                Thread.Sleep((int)GameController.Game.IngameState.CurLatency);
+                Thread.Sleep(GameController?.IngameState?.ServerData?.Latency ?? 50);
                 Thread.Sleep(Settings.ExtraDelay);
             }
         }
